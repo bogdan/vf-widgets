@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/var/lib/gems/1.8/gems/jspec-3.3.2/lib/jspec.css" />
+    <script src="support/jspec.js"></script>
+    <script src="support/jspec.xhr.js"></script>
+    <script src="support/mootools.js"></script>
+    <script src="support/mootools.more.js"></script>
+    <script src="unit/spec.helper.js"></script>
+
+    <script src="../src/namespaces.js"></script>
+    <script src="../src/Core/Class.Extras.Ext.js"></script>
+    <script src="../src/Utils/Utils.js"></script>
+
+    <script src="../src/Widget/Animators.js"></script>
+    <script src="../src/Widget/Stateful.js"></script>
+    <script src="../src/Widget/Widget.js"></script>
+
+    <script src="../src/Button/Button.js"></script>
+    <script src="../src/Link/Link.js"></script>
+
+    <script src="../src/Controller/Controller.js"></script>
+    <script src="../src/Dialog/Dialog.js"></script>
+    <script src="../src/List/List.js"></script>
+
+
+    <script>
+      function runSuites() {
+        JSpec
+        .exec('unit/spec.js')
+        .exec('unit/Widget/Widget.js')
+        .exec('unit/Button/Button.js')
+        .exec('unit/Link/Link.js')
+        .exec('unit/Controller/Controller.js')
+        .exec('unit/Dialog/Dialog.js')
+        .exec('unit/List/List.js')
+        .run({ fixturePath: 'fixtures' })
+        .report()
+      }
+    </script>
+  </head>
+  <body class="jspec" onLoad="runSuites();">
+    <div id="jspec-top"><h2 id="jspec-title">JSpec <em><script>document.write(JSpec.version)</script></em></h2></div>
+    <div id="jspec"></div>
+    <div id="jspec-bottom"></div>
+  </body>
+</html>

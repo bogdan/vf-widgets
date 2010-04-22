@@ -26,17 +26,22 @@ Vf.Following = new Class({
   */
 
   widgets: {
+    /* 
+    * The descriptor below is equal
+    * this.followLink = new Vf.Link('a.js-follow', {method: post});
+    * this.followLink.addEvent('success', this.follow.bind(this));
+    */
     followLink: {
       selector: 'a.js-follow', //widget selector scoped to current controller element
-      clazz: Vf.Link, //class to wrap around selected element
-      onSuccess: 'follow', //assigning this.follow function to be executed after ajax request successfuly completed
-      method: 'post' //ajax request method that goes to server  
+      clazz: Vf.Link, //class to wrap around selected element, that doing ajax request to server using the href of the link and specified method
+      onSuccess: 'follow', //assigning this.follow function to be executed after ajax request inside Vf.Link successfuly completed
+      method: 'post' //ajax request method that goes to server inside Vf.Link 
     },
     unfollowLink: {
       selector: 'a.js-unfollow',
-      clazz: Vf.Link, //class to wrap around selected element
-      onSuccess: 'unfollow', //assigning this.unfollow function to be executed after ajax request successfuly completed
-      method: 'delete' //ajax request method that goes to server 
+      clazz: Vf.Link, 
+      onSuccess: 'unfollow', 
+      method: 'delete' 
     }
   },
 

@@ -31,7 +31,7 @@ var Invitation = new Class({
     if (recallLink) {
       this.recallLink.addEvent('click', function() {
         new Request({
-          url: this.element.href,
+          url: this.recallLink.href,
           method: 'delete',
           onSuccess: function() {
             this.element.destroy();
@@ -43,7 +43,7 @@ var Invitation = new Class({
     if (resendLink) {
       this.resendLink.addEvent('click', function() {
         new Request({
-          url: this.element.href,
+          url: this.resendLink.href,
           method: 'put',
           onSuccess: function() {
             new Element('span', {html: 'Resent'}).replaces(this.resendLink);

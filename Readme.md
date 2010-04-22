@@ -14,18 +14,18 @@ from other languages like Swing or GTK but also include all special aspects of D
 
 ## Provided widgets:
   * Basic:
-    * Widget
-    * Button
-    * Link
-    * Input
-    * TextInput
-  * Complex:
-    * Controller
-    * Form
-    * Dialog
-    * ConfirmDialog
-    * FormDialog
-    * List
+    * Widget - provides basic utility methods
+    * Button - serves to indicate button that should do some actions on click
+    * Link - extends the button and wraps _a_ tag, knows about _href_ and can do ajax call with it
+    * Input - wraps any form input, knows about its label.
+    * TextInput - wraps text input, provides placeholder support
+  * Advanced - acts as container for other widgets
+    * Controller - base for all advanced widgets, provides simplyfied API for nested widgets declaration
+    * Form - wrap _form_ tab and provides some default behaviours like: reset on hide, hide on success etc.
+    * Dialog - modal dialogs implementation
+    * ConfirmDialog - Not yet implemented
+    * FormDialog - modal dialog that contains only a form
+    * List - wraps _ul_ or _ol_ tag, provides all set of array-like methods, autoupdated counter and more
 
 
 ## Examples

@@ -3,7 +3,30 @@
 
 Vf-Widgets is a javascript library that provides numereous Widgets 
 to build a GUI for Rich Internet Application and is based on MooTools low level library.
-The power of Vf-Widgets are the integration and unified API.
+The advantages of Vf-Widgets are their integration and unified API.
+Vf-Widgets is trying to combine the best practices of well practiced libraries 
+from other languages like Swing or GTK but also include all special aspects of DOM and JavaScript
+
+## Princibles under this library:
+  * Object oriented design
+  * Unified API
+  * JavaScript should not generate HTML too much
+
+## Provided widgets:
+  * Basic:
+    * Widget
+    * Button
+    * Link
+    * Input
+    * TextInput
+  * Complex:
+    * Controller
+    * Form
+    * Dialog
+    * ConfirmDialog
+    * FormDialog
+    * List
+
 
 ## Examples
 
@@ -13,7 +36,7 @@ To get started look at examples folder.
 
 (The MIT License)
 
-Copyright (c) 2009 Your Name &lt;Your Email&gt;
+Copyright (c) 2010 Bogdan Gusiev
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

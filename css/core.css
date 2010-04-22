@@ -4,7 +4,6 @@
 
 .dialog-overlay: {
     background: black no-repeat 50% 50%;
-    background-repeat: no-repeat;
     display: none;
     height: 100%;
     left: 0%;

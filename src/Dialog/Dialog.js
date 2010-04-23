@@ -6,16 +6,15 @@ Vf.Dialog = new Class({
     overlay: {
       selector: '#dialog_overlay',
       global: true
-    }
-  },
-
-  buttons: {
+    },
     closeButtons: {
+      clazz: Vf.Button,
       selector: '.js-close-dialog',
       onClick: 'hide',
       multiple: true
     },
     openButton: {
+      clazz: Vf.Button,
       selector: null,
       global: true,
       onClick: 'show'
@@ -33,7 +32,7 @@ Vf.Dialog = new Class({
   },
 
   initialize: function(element, options) {
-    this.buttons.openButton.selector = this.options.openButton;
+    this.widgets.openButton.selector = this.options.openButton;
     this.parent.apply(this, arguments);
     this.addClass(this.options.modalDialogClass);
   },

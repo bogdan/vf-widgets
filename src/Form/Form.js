@@ -38,7 +38,7 @@ Vf.Form = new Class({
     }
   },
 
-  submit: function() {
+  submit: function(event) {
     if (event) {
       event.stop();
     }

@@ -90,3 +90,6 @@ var Invitation = new Class({
 * See next examples for details how it works
 *
 */
+
+new Invitation($('invitation'));
+

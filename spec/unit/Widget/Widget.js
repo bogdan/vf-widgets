@@ -144,4 +144,13 @@ JSpec.describe('Vf.Widget', function(){
     });  
   });
 
+  describe("#append", function(){
+    before_each(function(){
+      widget.append('<h1 id="new">new</h1>');    
+    });    
+    it("should append given text to inner html", function(){
+      widget.getElement('h1').should_not.be_null;
+    });
+  });
+
 });

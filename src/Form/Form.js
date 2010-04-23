@@ -6,12 +6,12 @@ Vf.Form = new Class({
   widgets: {
     submitButton: {
       clazz: Vf.Button,
-      selector: "a.js-submit-form",
+      selector: ".js-submit-form",
       onClick: "submit"
     },
     cancelButton: {
       clazz: Vf.Button,
-      selector: "a.js-cancel-form",
+      selector: ".js-cancel-form",
       onClick: "cancel"
     }
   },

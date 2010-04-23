@@ -39,6 +39,15 @@ JSpec.describe("Vf.List", function(){
 
   });
 
+  describe("#add", function(){
+    before_each(function(){
+      widget.add('<span id="new">hello</span>');
+    });    
+    it("should convert given string to html and add it as list item", function(){
+      widget.getElement('span').should_not.be_null;
+    });
+  });
+
   describe("with two items", function(){
     before_each(function(){
       item = new Element('div');

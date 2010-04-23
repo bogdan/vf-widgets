@@ -55,6 +55,10 @@ Vf.List = new Class({
     this.updateCounter();
   },
 
+  add: function(text, position) {
+    return this.grab(Vf.Utils.toHtml(text), position);
+  },
+
   each: function(processor) {
     this.items.each(function(item) {
       processor(item);

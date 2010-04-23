@@ -4,7 +4,7 @@ Vf.Link = new Class({
   Extends: Vf.Button,
 
   options: {
-    lock: null,
+    spinnerTarget: null,
     submitOnClick: true,
     method: 'get'
   },
@@ -33,7 +33,9 @@ Vf.Link = new Class({
       evalScripts: false,
       onSuccess: this.success.bind(this),
       onFailure: this.failure.bind(this),
-      onComplete: this.complete.bind(this)
+      onComplete: this.complete.bind(this),
+      useSpinner: true,
+      spinnerTarget: this.options.spinnerTarget
     }).send();
     this.fireEvent('submit');
   },

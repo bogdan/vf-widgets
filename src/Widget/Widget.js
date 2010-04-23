@@ -73,12 +73,12 @@ Vf.Widget = new Class({
     return this.element.grab(item, where);
   },
 
-  append: function(text, position) {
-    return this.grab(Utils.toHtml(text), position);
-  },
-
   adopt: function() {
     return this.element.adopt(arguments);
+  },
+
+  append: function(text) {
+    return this.adopt(Vf.Utils.toHtml(text));
   },
 
   addClass: function(name) {

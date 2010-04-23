@@ -21,7 +21,8 @@ Vf.Utils = {
 
   toHtml: function(string) {
     var container = new Element('div');
-    return container.set('html', string);
+    container.set('html', string);
+    return container.children;
   },
 
 };

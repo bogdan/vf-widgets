@@ -4,6 +4,7 @@ files:
   # Base
   - "src/Core/Class.Extras.Ext.js"
   - "src/Utils/Utils.js"
+  - "src/Utils/Response.js"
 
   - "src/Widget/Animators.js"
   - "src/Widget/Stateful.js"

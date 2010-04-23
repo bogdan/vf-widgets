@@ -1,6 +1,8 @@
 name: Vf-Widgets
 files:
 
+  - "src/namespaces.js"
+
   # Base
   - "src/Core/Class.Extras.Ext.js"
   - "src/Utils/Utils.js"

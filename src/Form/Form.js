@@ -2,18 +2,18 @@ Vf.Form = new Class({
 
   Extends: Vf.Controller,
 
-  inputs: {
-  },
 
-  buttons: {
+  widgets: {
     submitButton: {
+      clazz: Vf.Button,
       selector: "a.js-submit-form",
       onClick: "submit"
     },
     cancelButton: {
+      clazz: Vf.Button,
       selector: "a.js-cancel-form",
       onClick: "cancel"
-    },
+    }
   },
 
   options: {
@@ -24,6 +24,7 @@ Vf.Form = new Class({
     resetOnCancel: true,
     resetOnSuccess: true,
     hideOnSuccess: false,
+    data: {}
   },
 
   initialize: function(element, options) {
@@ -37,12 +38,7 @@ Vf.Form = new Class({
     }
   },
 
-  initWidgets: function() {
-    this.parent();
-    this.buildWidgets(this.inputs, {clazz: Vf.Input});
-  },
-
-  submit: function(event) {
+  submit: function() {
     if (event) {
       event.stop();
     }
@@ -50,7 +46,8 @@ Vf.Form = new Class({
       this.mask.position();
       this.mask.show();
     }
-    new Form.Request(this.element, null, {
+    new Request({
+      data: $H(this.options.data).toQueryString() + "&" + this.element.toQueryString(),
       onSuccess: this.success.bind(this),
       onFailure: this.failure.bind(this),
       onComplete: this.complete.bind(this),
@@ -59,16 +56,15 @@ Vf.Form = new Class({
   },
 
 
-  success: function(responseHtml) {
-    var container = new Element('div');
-    container.adopt(responseHtml);
+  success: function(text) {
+
     if (this.options.resetOnSuccess) {
       this.reset();
     }
     if (this.options.hideOnSuccess) {
       this.hide();
     }
-    this.fireEvent('success', container.get('html'));
+    this.fireEvent('success', text);
   },
 
   failure: function(xhr) {

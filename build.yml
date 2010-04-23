@@ -1,0 +1,27 @@
+name: Vf-Widgets
+files:
+
+  # Base
+  - "src/Core/Class.Extras.Ext.js"
+  - "src/Utils/Utils.js"
+
+  - "src/Widget/Animators.js"
+  - "src/Widget/Stateful.js"
+  - "src/Widget/Widget.js"
+
+  - "src/Button/Button.js"
+  - "src/Link/Link.js"
+
+  - "src/Input/Input.js"
+  - "src/Input/TextInput.js"
+
+  # Advanced
+  - "src/Controller/Controller.js"
+
+  - "src/Form/Form.js"
+
+  - "src/Dialog/Dialog.js"
+  - "src/Dialog/ConfirmDialog.js"
+  - "src/Dialog/FormDialog.js"
+
+  - "src/List/List.js"

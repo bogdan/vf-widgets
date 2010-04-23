@@ -9,14 +9,16 @@ Vf.ConfirmDialog = new Class({
   Extends: Vf.Dialog,
 
 
-  buttons: {
+  widgets: {
     confirmButton: {
+      clazz: Vf.Button,
       selector: 'a.js-confirm',
       onClick: 'success',
       required: true
     },
 
     cancelButton: {
+      clazz: Vf.Button,
       selector: 'a.js-cancel',
       onClick: 'cancel',
       required: true

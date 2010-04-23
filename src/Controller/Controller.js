@@ -2,17 +2,17 @@ Vf.Controller = new Class({
 
   Extends: Vf.Widget,
 
-  buttons: {
-  },
-
-  links: {
+  options: {
+    useSpinner: false,
+    spinnerTarget: null //initialized in constructor
   },
 
   widgets: {
   },
 
 
-  initialize: function() {
+  initialize: function(element, options) {
+    this.options.spinnerTarget = $(element);
     this.parent.apply(this, arguments);
     this.initWidgets();
   },
@@ -22,9 +22,7 @@ Vf.Controller = new Class({
   */
 
   initWidgets: function() {
-    this.buildWidgets(this.widgets);
-    this.buildWidgets(this.links, {lock: this, clazz: Vf.Link});
-    this.buildWidgets(this.buttons, {clazz: Vf.Button});
+    this.buildWidgets(this.widgets, {useSpinner: this.options.useSpinner, spinnerTarget: this.options.spinnerTarget});
   },
 
   buildWidgets: function(widgets, defaultOptions) {

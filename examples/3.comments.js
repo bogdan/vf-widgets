@@ -67,7 +67,9 @@ Vf.Comment = new Class({
 
   // responseText suppose to be an html with comment layout
   update: function(responseText) {
-    this.reinitialize(responseText); //reinitializing widget with new received layout
+    //reinitializing whole controller with new received layout
+    //replaces old layout with new one in DOM as well
+    this.reinitialize(responseText);
   }
 
 
@@ -97,8 +99,8 @@ Vf.Comments = new Class({
   //responseText suppose to be html layout of new created comment
   append: function(responseText) {
     //converting string to html and appending it to the bottom of the list
-    // as new list element(<li>)
-    this.list.grab(Utils.toHtml(responseText)); 
+    //as new list element(<li>)
+    this.list.append(responseText); 
   },
 
 

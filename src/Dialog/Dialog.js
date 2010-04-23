@@ -15,7 +15,7 @@ Vf.Dialog = new Class({
     },
     openButton: {
       clazz: Vf.Button,
-      selector: null,
+      selector: null, //rewrited from this.options.openButton
       global: true,
       onClick: 'show'
     }
@@ -32,7 +32,7 @@ Vf.Dialog = new Class({
   },
 
   initialize: function(element, options) {
-    this.widgets.openButton.selector = this.options.openButton;
+    this.widgets.openButton.selector = options.openButton;
     this.parent.apply(this, arguments);
     this.addClass(this.options.modalDialogClass);
   },

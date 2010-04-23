@@ -9,7 +9,8 @@ for other languages like Swing or GTK but also include all special aspects of DO
 ## Princibles under this library:
   * Object oriented design
   * Unified API
-  * JavaScript should not generate HTML too much
+  * Manage HTML but not generate it
+  * Using custom events
 
 ## Provided widgets:
   * Basic:
@@ -20,16 +21,15 @@ for other languages like Swing or GTK but also include all special aspects of DO
     * TextInput - wraps text input, provides placeholder support
   * Advanced - acts as container for other widgets
     * Controller - base for all advanced widgets, provides simplyfied API for nested widgets declaration
-    * Form - wrap _form_ tab and provides some default behaviours like: reset on hide, hide on success etc.
-    * Dialog - modal dialogs implementation
+    * Form - wrap _form_ tag, can submit it with ajax and provides behaviours like: reset on hide, hide on success etc.
+    * Dialog - modal dialogs implementation, provides mask and some options
     * ConfirmDialog - Not yet implemented
-    * FormDialog - modal dialog that contains only a form
+    * FormDialog - modal dialog that contains only a form, provides events forwarding and set more valueable default behaviors
     * List - wraps _ul_ or _ol_ tag, provides all set of array-like methods, autoupdated counter and more
 
+## Controllers
 
-## Examples
-
-To get started look at examples folder.
+The core principle inside Vf-Widgets. Controllers are also widgets. They acts as containers for other widgets and doing all 'glue' between them. Any controller consists of two parts: actors and actions. For more information how to build controllers see examples folder of the project.
 
 ## License 
 

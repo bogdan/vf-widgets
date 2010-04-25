@@ -1,4 +1,4 @@
-/**
+/*
  *
  * TODO: Under constraction
  *
@@ -12,14 +12,14 @@ Vf.ConfirmDialog = new Class({
   widgets: {
     confirmButton: {
       clazz: Vf.Button,
-      selector: 'a.js-confirm',
+      selector: '.js-confirm',
       onClick: 'success',
       required: true
     },
 
     cancelButton: {
       clazz: Vf.Button,
-      selector: 'a.js-cancel',
+      selector: '.js-cancel',
       onClick: 'cancel',
       required: true
     }

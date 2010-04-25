@@ -1,4 +1,5 @@
 name: Vf-Widgets
+version: 0.0.1
 files:
 
   - "src/namespaces.js"
@@ -28,3 +29,13 @@ files:
   - "src/Dialog/FormDialog.js"
 
   - "src/List/List.js"
+
+src: 'src'
+doc:
+  yuidoc: 'yuidoc.py'
+  url: 'http://localhost/vf-widgets'
+  dir: 'doc'
+  parserdir: 'tmp/parser'
+  template: 'template'
+  
+

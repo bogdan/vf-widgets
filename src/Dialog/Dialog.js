@@ -21,12 +21,10 @@ Vf.Dialog = new Class({
     hideOnEscape: false,
     disableScrolling: true,
     overlay: false,
-    //openButton: null,
     centerOnShow: true
   },
 
   initialize: function(element, options) {
-    //this.widgets.openButton.selector = options.openButton;
     this.parent.apply(this, arguments);
     this.addClass(this.options.modalDialogClass);
   },

@@ -1,7 +1,13 @@
 
 
 /**
- *  Button widget suppose to wrap any clickable element
+ *  Button widget suppose to wrap any clickable element <br/>
+ *  <h4>Valid options:</h4>
+ *  <ul>
+ *    <li>all options from Vf.Widget class.</li>
+ *    <li>hideOnClick - autohides element on click. Default: false.</li>
+ *    <li>preventDefault - set to prevent default click event of the element. Default: true.</li>
+ * </ul>
  *  @class Button
  *  @for Button
  *  @extends Vf.Widget
@@ -18,12 +24,8 @@ Vf.Button = new Class({
 
   /**
    * Constructor
-   * Valid options:
-   *   * all options from Vf.Widget class
-   *   * hideOnClick - autohides element on click. Default: false.
-   *   * preventDefault - set to prevent default click event of the element. Default: true.
    * @constructor
-   * @param {Mixed} element The DOM element or element id to be wraped under widget class.
+   * @param {String|Element} element The DOM element or element id to be wraped under widget class.
    * @param {Hash} options hash with options
    */
   initialize: function(element, options) {

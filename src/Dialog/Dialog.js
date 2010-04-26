@@ -1,6 +1,6 @@
 Vf.Dialog = new Class({
 
-  Extends: Vf.Controller,
+  Extends: Vf.Controller.WithToggler,
 
   widgets: {
     overlay: {
@@ -12,13 +12,7 @@ Vf.Dialog = new Class({
       selector: '.js-close-dialog',
       onClick: 'hide',
       multiple: true
-    },
-    openButton: {
-      clazz: Vf.Button,
-      selector: null, //rewrited from this.options.openButton
-      global: true,
-      onClick: 'show'
-    }
+    }  
   },
 
   options: {
@@ -27,12 +21,12 @@ Vf.Dialog = new Class({
     hideOnEscape: false,
     disableScrolling: true,
     overlay: false,
-    openButton: null,
+    //openButton: null,
     centerOnShow: true
   },
 
   initialize: function(element, options) {
-    this.widgets.openButton.selector = options.openButton;
+    //this.widgets.openButton.selector = options.openButton;
     this.parent.apply(this, arguments);
     this.addClass(this.options.modalDialogClass);
   },

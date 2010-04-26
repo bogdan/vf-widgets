@@ -4,10 +4,10 @@ JSpec.describe("Vf.Dialog", function(){
     html = new Element('div');
     closeButton = new Element('a', {'class': 'js-close-dialog' });
     html.grab(closeButton);
-    openButton = new Element('button', {'id': 'opener' });
-    $(document.body).grab(openButton);
+    toggler = new Element('button', {'id': 'opener' });
+    $(document.body).grab(toggler);
 
-    widget = new Vf.Dialog(html, {openButton: 'button'});
+    widget = new Vf.Dialog(html, {toggler: 'button'});
   });  
 
   it("should assign event on close button click", function(){
@@ -15,9 +15,9 @@ JSpec.describe("Vf.Dialog", function(){
   });
 
   it("should assign event on open button click", function(){
-    widget.openButton.should_not.be_null;
+    widget.toggler.should_not.be_null;
     //TODO: uncomment
-    //widget.openButton.$events['click'].should_not.be_null;
+    //widget.toggler.$events['click'].should_not.be_null;
   });
 
   it("should add 'modalDialogClass' to the element", function(){

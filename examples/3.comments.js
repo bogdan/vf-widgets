@@ -90,7 +90,6 @@ Vf.Comments = new Class({
     form: {
       clazz: Vf.Form,
       selector: 'form',
-      itemClass: Vf.Form,
       onSuccess: 'append',
       resetOnSuccess: true
     }

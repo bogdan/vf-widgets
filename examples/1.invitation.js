@@ -29,29 +29,32 @@ var Invitation = new Class({
     this.element = element;
     this.recallLink = this.element.getElement('a.js-recall-invitation');
     if (recallLink) {
-      this.recallLink.addEvent('click', function() {
-        new Request({
-          url: this.recallLink.href,
-          method: 'delete',
-          onSuccess: function() {
-            this.element.destroy();
-          }.bind(this)
-        }).send();
-      });
+      this.recallLink.addEvent('click', this.recall.bind(this));
     }
     this.resendLink = this.element.getElement('a.js-resend-invitation');
     if (resendLink) {
-      this.resendLink.addEvent('click', function() {
-        new Request({
-          url: this.resendLink.href,
-          method: 'put',
-          onSuccess: function() {
-            new Element('span', {html: 'Resent'}).replaces(this.resendLink);
-          }.bind(this)
-        });
-      });
+      this.recallLink.addEvent('click', this.resend.bind(this));
     }
   },
+  recall: function() {
+    new Request({
+      url: this.recallLink.href,
+      method: 'delete',
+      onSuccess: function() {
+        this.element.destroy();
+      }.bind(this)
+    }).send();
+  },
+
+  resend: function() {
+    new Request({
+      url: this.resendLink.href,
+      method: 'put',
+      onSuccess: function() {
+        new Element('span', {html: 'Resent'}).replaces(this.resendLink);
+      }.bind(this)
+    }).send();
+  }
 });
 
 

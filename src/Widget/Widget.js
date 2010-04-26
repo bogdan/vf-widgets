@@ -7,7 +7,7 @@
  * Base class for all widgets. Provides many utility methods
  * @class Widget
  * @for Widget
- * @namespace vf
+ * @namespace Vf
  */
 Vf.Widget = new Class({
 

@@ -22,22 +22,17 @@ Vf.Controller.WithToggler = new Class({
       this.widgets.toggler.selector = options.toggler;
     }
     if (options.autohideToggler) {
-      this.widgets.toggler.hideOnClick = options.autohideToggler;
+      this.widgets.toggler.hideOnClick = options.toggler;
     }
     this.parent.apply(this, arguments);
-    if (this.toggler) { 
-      if (this.options.autohideToggler && this.isHidden()) { 
+    if (this.options.autohideToggler && this.toggler) { 
+      if (this.isHidden()) { 
         this.toggler.hide();
       }
+      this.addEvent('hide', function() {
+        this.toggler.show();
+      }.bind(this));
     }
-  },
-
-  hide: function() {
-    var result = this.parent.apply(this, arguments);
-    if (result && this.toggler) {
-      this.toggler.show();
-    }
-    return result;
   }
 
 

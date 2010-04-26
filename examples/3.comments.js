@@ -62,6 +62,7 @@ Vf.Comment = new Class({
   // responseText suppose to be an html with edit comment form
   edit: function(responseText) {
     this.append(responseText, 'bottom');
+    //initializing the form from it descriptor
     this.buildWidget(this.widgets.form);
   },
 
@@ -100,7 +101,7 @@ Vf.Comments = new Class({
   append: function(responseText) {
     //converting string to html and appending it to the bottom of the list
     //as new list element(<li>)
-    this.list.append(responseText); 
+    this.list.add(responseText); 
   },
 
 

@@ -25,8 +25,8 @@ Vf.Controller.WithToggler = new Class({
       this.widgets.toggler.hideOnClick = options.toggler;
     }
     this.parent.apply(this, arguments);
-    if (this.options.autohideToggler && this.toggler) { 
-      if (this.isHidden()) { 
+    if (this.toggler) { 
+      if (this.options.autohideToggler && this.isHidden()) { 
         this.toggler.hide();
       }
       this.addEvent('hide', function() {

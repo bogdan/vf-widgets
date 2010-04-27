@@ -11,19 +11,25 @@ Vf.Controller = new Class({
   Extends: Vf.Widget,
 
   /**
-   *  Valid widget options
-   *  <ul>
-   *    <li>all Vf.Widget options</li>
-   *    <li>
-   *      useSpinner - determines if the controller uses spinner to indicate activity
-   *      bypass this option to all defined widgets contructor. Default: false.
-   *    </li>
-   *    <li>spinnerTarget - element to draw a spinner. Default: this widget element.</li>
-   *  </ul>
+   *  Widget options. Accepts all options from <class>Vf.Widget</class>
    *  @property options
+   *  @type Hash
    */
   options: {
+    /**
+     *  Determines if the controller uses spinner to indicate activity
+     *  bypass this option to all defined widgets contructor. Default: false.
+     *  @property options.useSpinner
+     *  @type Boolean
+     *  @default false
+     */
     useSpinner: false,
+    /**
+     *  Element to draw a spinner. Default: this widget element.
+     *  @property options.spinnerTarget
+     *  @type {Element|String}
+     *  @default this
+     */
     spinnerTarget: null //initialized in constructor
   },
 
@@ -32,26 +38,73 @@ Vf.Controller = new Class({
    *  Each descriptor is used to build a widget and assign it to the property of controller object
    *  Descriptor key is used as the name of the property.
    *  <h4>Example</h4>
-   *  <code>widgets: { submitButton: {clazz: Vf.Button, selector: '.js-submit'}}</code>
+   *  <code>widgets: { 
+   *    submitButton: {
+   *      clazz: Vf.Button, 
+   *      selector: '.js-submit',
+   *      onClick: 'submit'
+   *    },
+   *    cancelButton: {
+   *      clazz: Vf.Button,
+   *      selector: '.js-cancel',
+   *      onClick: 'cancel'
+   *    }
+   *  }</code>
    *  this interpreted in the constructor as 
-   *  <code>this.submitButton = new Vf.Button(this.getElement('.js-submit'))</code>
-   *  <h4>Widget descriptor options</h4>
-   *  <ul>
-   *    <li>clazz - widget class that used as contructor. Default: Vf.Widget.</li>
-   *    <li>selector - query that is used to find the widget. Default: null.</li>
-   *    <li>
-   *      global - if true the query is applied to whole document scope 
-   *      otherwise only to relatively to current widget element. Default false
-   *    </li>
-   *    <li>
-   *      multiple - if true finds all widgets that match query and wrap all of them with widget. Default: false.
-   *    </li>
-   *    <li>required - if true throws an error if element not found. Ignored if multiple is set to true. Default: false.</li>
-   *  </ul>
-   *  IMPORTANT: other options are forwarded to described widget constructor
+   *  <code>this.submitButton = new Vf.Button(this.getElement('.js-submit'))
+   *  this.submitButton.addEvent('click', this.submit.bind(this));
+   *  this.cancelButton = new Vf.Button(this.getElement('.js-cancel'))
+   *  this.cancelButton.addEvent('click', this.cancel.bind(this));
+   *  </code>
+   *  <h4>IMPORTANT: options are forwarded to described widget constructor</h4>
    *  @property widgets
+   *  @type Hash
+   *  @default {}
    */
   widgets: {
+    /**
+     *  Widget Descriptor options
+     *  @property widgets.descriptor
+     *  @type Hash
+     */
+
+    /**
+     *  widget class that used as contructor
+     *  @property widgets.descriptor.clazz
+     *  @type Object
+     *  @default Vf.Widget
+     */
+
+    /**
+     *  Query that is used to find the widget
+     *  @property widgets.descriptor.selector 
+     *  @type String
+     *  @default null
+     */
+
+    /**
+     *  If true the query is applied to whole document scope 
+     *  otherwise relatively to current widget element
+     *  @property widgets.descriptor.global 
+     *  @type Boolean
+     *  @default false
+     */
+
+    /**
+     *  If true finds all widgets that match query, wrap all of them with widget and assigns the array of constructed widget to the property
+     *  If false finds first widget that match the query, wraps it with widget and assigns constructed objet to the property
+     *  @property widgets.descriptor.multiple
+     *  @type Boolean
+     *  @default false
+     */
+
+    /**
+     *  If true throws an error if element not found. Ignored if multiple is set to true.
+     *  @property widgets.descriptor.required
+     *  @type Boolean
+     *  @default false
+     */
+
   },
 
 
@@ -92,8 +145,8 @@ Vf.Controller = new Class({
 
   /**
    *  Builds a widget from the descriptor and options
-   *  @param {String} property property to assign the constructed widget class
-   *  @param {Hash} widget descriptor
+   *  @param {String} property property name to assign the constructed widget class
+   *  @param {Hash} options widget descriptor
    */
   buildWidget: function(property, options) {
     var selector = options.selector;

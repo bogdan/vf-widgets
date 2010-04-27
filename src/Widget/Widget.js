@@ -22,6 +22,12 @@ Vf.Widget = new Class({
 
   property: 'widget',
 
+  /**
+   *  Widget options
+   *  @property options
+   *  @type Hash
+   *  @default {} 
+   */
   options: {
   },
 

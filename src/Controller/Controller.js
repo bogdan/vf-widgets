@@ -83,7 +83,7 @@ Vf.Controller = new Class({
      */
 
     /**
-     *  If true the query is applied to whole document scope 
+     *  If true the query is applied to whole document body scope 
      *  otherwise relatively to current widget element
      *  @property widgets.descriptor.global 
      *  @type Boolean
@@ -156,7 +156,7 @@ Vf.Controller = new Class({
       return;
     }
 
-    this.preprocessOptions(options);
+    this.bindEventsToMethods(options);
     var scope = options.global ? $(document.body) : this;
     if (options.multiple) {
       this[property] = [];
@@ -185,7 +185,7 @@ Vf.Controller = new Class({
     return new clazz(element, options);
   },
   
-  preprocessOptions: function(options) {
+  bindEventsToMethods: function(options) {
     for (var option in options) {
       var value = options[option];
       if (/^on[A-Z]/.test(option) && $type(value) == 'string') {

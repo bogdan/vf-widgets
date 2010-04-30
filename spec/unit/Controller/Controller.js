@@ -6,10 +6,10 @@ describe("Vf.Controller", function(){
     subject = new Vf.Controller(html);  
   });  
 
-  describe("#preprocessOptions", function(){
+  describe("#bindEventsToMethods", function(){
     before_each(function(){
       options = {a: 'hello', onSuccess: 'destroy'};
-      subject.preprocessOptions(options);
+      subject.bindEventsToMethods(options);
     });  
 
     it("should convert on* attributes to functions", function(){

@@ -39,6 +39,7 @@ Vf.Widget = new Class({
    */
   initialize: function(element, options) { 
     this.enableLog();
+    this.preprocessWidgetOptions(options);
     this.element = $(element);
     if (this.element === null) {
       throw "Element is null";
@@ -300,6 +301,10 @@ Vf.Widget = new Class({
   /*
   * Implementation
   */
+
+  preprocessWidgetOptions: function(options) {
+    
+  },
 
   addEventToElement: function(event1, event2) {
     $A(arguments).each(function(event) {

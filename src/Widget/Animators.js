@@ -1,4 +1,5 @@
-Vf.Widget.Slider = new Class({
+Vf.Animators = {};
+Vf.Animators.Slider = new Class({
   show: function(element) {
     return element.slide('down');
   },
@@ -8,7 +9,7 @@ Vf.Widget.Slider = new Class({
   }
 });
 
-Vf.Widget.Fader = new Class({
+Vf.Animators.Fader = new Class({
   show: function(element) {
     return element.fade('in');
   },

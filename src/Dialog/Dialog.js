@@ -1,6 +1,8 @@
 Vf.Dialog = new Class({
 
-  Extends: Vf.Controller.WithToggler,
+  Extends: Class.inherit(
+    Vf.Controller,
+    Vf.Controller.WithToggler),
 
   widgets: {
     overlay: {

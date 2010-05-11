@@ -39,3 +39,8 @@ namespace :build do
   end # do
 
 end # do
+
+desc "Spec with firefox"
+task :spec do
+  `firefox spec/dom.html`
+end

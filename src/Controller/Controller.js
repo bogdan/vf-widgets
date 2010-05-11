@@ -1,5 +1,5 @@
 /**
- *  Controller is a widget that controllers other widget 
+ *  Controller is a widget that controlls other widgets 
  *  (in most cases nested within the controller)
  *  Controller provides simple DSL to define and initialize it's widgets
  *  @class Controller
@@ -10,11 +10,6 @@ Vf.Controller = new Class({
 
   Extends: Vf.Widget,
 
-  /**
-   *  Widget options. Accepts all options from <class>Vf.Widget</class>
-   *  @property options
-   *  @type Hash
-   */
   options: {
     /**
      *  Determines if the controller uses spinner to indicate activity
@@ -38,7 +33,7 @@ Vf.Controller = new Class({
    *  Each descriptor is used to build a widget and assign it to the property of controller object
    *  Descriptor key is used as the name of the property.
    *  <h4>Example</h4>
-   *  <code>widgets: { 
+   *  <code class="js">widgets: { 
    *    submitButton: {
    *      clazz: Vf.Button, 
    *      selector: '.js-submit',
@@ -51,11 +46,13 @@ Vf.Controller = new Class({
    *    }
    *  }</code>
    *  this interpreted in the constructor as 
-   *  <code>this.submitButton = new Vf.Button(this.getElement('.js-submit'))
+   *  <code class="js">
+   *  this.submitButton = new Vf.Button(this.getElement('.js-submit'));
    *  this.submitButton.addEvent('click', this.submit.bind(this));
    *  this.cancelButton = new Vf.Button(this.getElement('.js-cancel'))
    *  this.cancelButton.addEvent('click', this.cancel.bind(this));
    *  </code>
+   *  
    *  <h4>IMPORTANT: options are forwarded to described widget constructor</h4>
    *  @property widgets
    *  @type Hash

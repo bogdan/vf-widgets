@@ -13,12 +13,27 @@ Vf.Widget = new Class({
 
   Extends: Vf.Stateful('hidden', 'hide', 'show', 'setHidden'),
 
+  /**
+   *  Fires when element got hidden
+   *  @event hide
+   */
+
+  /**
+   *  Fires when element got shown
+   *  @event show
+   */
   Implements: [
     Events,
     Log,
     Options,
     Class.Occlude
   ],
+
+  /**
+   *  Fires when element got hidden
+   *  @event hide
+   */
+
 
   property: 'widget',
 

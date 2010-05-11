@@ -40,7 +40,21 @@ namespace :build do
 
 end # do
 
-desc "Spec with firefox"
+desc "Spec with browser"
 task :spec do
-  `firefox spec/dom.html`
+  browse('spec/dom.html')
+end
+
+desc "View docs in browser"
+task :doc do
+  browse('doc/index.html')
+end
+
+
+def browse(path)
+  `#{browser} #{path}`
+end
+
+def browser
+  ENV['BROWSER'] || 'firefox'
 end
